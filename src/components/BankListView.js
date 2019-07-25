@@ -9,7 +9,7 @@ class BankListView extends Component {
                 title="Bank Search App"
                 columns={[
                     { title: 'IFSC', field: 'ifsc' },
-                    { title: 'BANK ID', field: 'bank_id', type:'numeric' },
+                    { title: 'BANK ID', field: 'bank_id', type: 'numeric' },
                     { title: 'BRANCH', field: 'branch' },
                     { title: 'ADDRESS', field: 'address', },
                     { title: 'CITY', field: 'city', },

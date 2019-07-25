@@ -4,14 +4,13 @@ class BankSearch extends Component {
     state = { filterValue: '' };
 
     onFilterChange = (event) => {
-        //event.preventDefault();
+
         let fVal = event.target.value
         console.log(fVal)
         this.setState({
-            filterValue:fVal
-        },() => {this.props.onFilter(this.state.filterValue)})
-        //console.log(this.state.filterValue)
-        //this.props.onFilter(this.state.filterValue);
+            filterValue: fVal
+        }, () => { this.props.onFilter(this.state.filterValue) })
+
     }
 
     render() {

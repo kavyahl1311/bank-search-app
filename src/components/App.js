@@ -5,9 +5,9 @@ import axios from 'axios';
 
 class App extends Component {
 
-    state = { data : [] }
+    state = { data: [] }
 
-    
+
     onFilter = async value => {
         const response = await axios.get('https://vast-shore-74260.herokuapp.com/banks', {
             params: {
@@ -17,14 +17,14 @@ class App extends Component {
         this.setState({
             data: response.data
         })
-        
+
     }
 
     render() {
-        return(
+        return (
             <div>
-                <BankSearch onFilter={this.onFilter}/>
-                <BankListView data = {this.state.data}/>
+                <BankSearch onFilter={this.onFilter} />
+                <BankListView data={this.state.data} />
             </div>
         )
     }
