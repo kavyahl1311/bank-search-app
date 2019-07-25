@@ -6,7 +6,6 @@ class BankSearch extends Component {
     onFilterChange = (event) => {
 
         let fVal = event.target.value
-        console.log(fVal)
         this.setState({
             filterValue: fVal
         }, () => { this.props.onFilter(this.state.filterValue) })
@@ -17,7 +16,6 @@ class BankSearch extends Component {
         return (
             <div >
                 <select className="ui search dropdown" onChange={this.onFilterChange} >
-                    <option value="">City</option>
                     <option value="BENGALURU">BENGALURU</option>
                     <option value="MUMBAI">MUMBAI</option>
                     <option value="CHENNAI">CHENNAI</option>
