@@ -1,4 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## BANK SEARCH APPLICATION
+
+This project was built using [Create React App](https://github.com/facebook/create-react-app).
+
+## Description
+
+User interface that allows a user to search the bank details of the 5 cities (i.e Benagaluru, Delhi, Chennai, Mumbai, Pune). 
+
+There is dropdown at the top to select the city which they wants to search the details of the banks. By default this application will be showing the table which has details of the banks available in Bengaluru. 
+
+User can search for a specific details , also sort using columns. 
+
+This application lets the user to export the details of the current page in CSV format.
+
+API responses are cached using axios-cache-adapter.
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+https://vast-shore-74260.herokuapp.com/banks?city=BENGALURU, is the API used to fetch the details of the banks.
+
+## Prerequisites
+### `Below are the prequisites required to run this application:`
+
+     1.Node - You can install the node using [NODE](https://nodejs.org/en/).
+     2.NPM - You can get the latest npm using [NPM](https://www.npmjs.com/get-npm).
+     3.GIT - Git is required to clone this particular project and to use it in your local machine. You can install git using 
+     [GIT](https://github.com/).
+
+### `Frameworks and libraries required to run this applications are:`
+  
+     1.Install React and react dom.
+             use these commands to install react and react-dom - npm install react --save , npm install react-dom --save.
+     2.Install axios.
+             use the command npm install axios --save to install it.
+     3.Install material-table.
+             use the command npm install material-table --save to install it.
+     4.Install axios-cache-adapter.
+             use the command npm install --save axios-cache-adapter to install it.
+        
+Once all the installation completed. Run npm start in the project directory, once the npm start finishes open the 
+[http://localhost:3000](http://localhost:3000) to view the application in the browser.
+
+### Deployment
+
+You can learn more about deployment in the [Deployment](https://facebook.github.io/create-react-app/docs/deployment).
+I have done the deployment using surge, link - [Bank Search App](http://bank-search.surge.sh).
 
 ## Available Scripts
 
