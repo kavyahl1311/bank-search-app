@@ -4,6 +4,8 @@ import BankListView from './BankListView';
 import axios from 'axios';
 import { setup } from 'axios-cache-adapter';
 
+import "../css/App.css";
+
 class App extends Component {
 
     state = { data: [], city : 'BENGALURU' }
@@ -45,7 +47,8 @@ class App extends Component {
 
     render() {
         return (
-            <div className="ui container">
+            <div className="container">
+                <div className="h3">Bank Search Application</div>
                 <BankSearch onFilter={this.onFilter} />
                 <BankListView data={this.state.data} city = {this.state.city} />
             </div>

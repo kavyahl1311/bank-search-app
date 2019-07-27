@@ -1,0 +1,19 @@
+.container{
+    border: 1px solid #c3c5eb;
+    position: relative;
+    background: #eaf1f1;
+    color: #777;
+    font-size: 13px;
+    background-size: cover;
+    width: fit-content;
+    margin: auto;
+    margin-top:2px;
+}
+
+.h3{
+    text-align: center;
+    font-family: serif;
+    margin-top: 8px;
+    font-size: 25px;
+    margin-bottom: 9px;
+}

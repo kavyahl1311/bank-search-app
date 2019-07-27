@@ -15,7 +15,7 @@ class BankSearch extends Component {
     render() {
         return (
             <div className="ui container">
-                <select className="ui search dropdown" onChange={this.onFilterChange} >
+                <select className="ui fluid search selection dropdown" onChange={this.onFilterChange} >
                     <option value="BENGALURU">BENGALURU</option>
                     <option value="MUMBAI">MUMBAI</option>
                     <option value="CHENNAI">CHENNAI</option>

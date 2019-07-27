@@ -36,10 +36,11 @@ class BankListView extends Component {
     }
 
     render() {
+        const titleName = "List of Banks in " + this.props.city
         return (
             <div className="ui container">
                 <MaterialTable
-                    title="Bank List"
+                    title= {titleName}
                     columns={[
                         {
                             title: 'BANK NAME', field: 'bank_name'
@@ -57,7 +58,7 @@ class BankListView extends Component {
                             title: 'ADDRESS', field: 'address', hidden: true
                         },
                         {
-                            title: 'CITY', field: 'city', hidden: true
+                            title: 'CITY', field: 'city', hidden : true
                         },
                         {
                             title: 'DISTRICT', field: 'district', hidden: true
@@ -75,7 +76,7 @@ class BankListView extends Component {
                     actions={[
                         rowData => ({
                             icon: this.state.arr[this.props.city].indexOf(rowData.ifsc) !== -1 ? 'favorite' : 'favorite_border',
-                            tooltip: 'favorite Bank',
+                            tooltip: this.state.arr[this.props.city].indexOf(rowData.ifsc) !== -1 ? 'remove from favorite' : 'add to favorite',
                             onClick: (event, rowData) => {
                                 this.onCLickOfFavorite(rowData.ifsc);
                             }
