@@ -53,6 +53,8 @@ Once all the installation completed. Run npm start in the project directory, onc
 You can learn more about deployment in the [Deployment](https://facebook.github.io/create-react-app/docs/deployment).
 I have done the deployment using surge, link - [Bank Search App](http://bank-search.surge.sh).
 
+Screenshot of the loan calculator app :![Bank Search App](BankSearchApp.PNG)
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -119,3 +121,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Author
+Kavya H L : kavyahl1234@gmail.com
