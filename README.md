@@ -53,7 +53,7 @@ Once all the installation completed. Run npm start in the project directory, onc
 You can learn more about deployment in the [Deployment](https://facebook.github.io/create-react-app/docs/deployment).
 I have done the deployment using surge, link - [Bank Search App](http://bank-search.surge.sh).
 
-Screenshot of the loan calculator app :![Bank Search App](BankSearchApp.PNG)
+Screenshot of the bank search app :![Bank Search App](BankSearchApp.PNG)
 
 ## Available Scripts
 
