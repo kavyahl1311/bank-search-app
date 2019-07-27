@@ -3,21 +3,38 @@ import MaterialTable from 'material-table';
 
 class BankListView extends Component {
     state = {
+        favorite: false,
         arr: {
-            BENGALURU: localStorage.getItem("BENGALURU") ? localStorage.getItem("BENGALURU") : "",
-            DELHI: localStorage.getItem("DELHI") ? localStorage.getItem("DELHI") : "",
-            PUNE: localStorage.getItem("PUNE") ? localStorage.getItem("PUNE") : "",
-            CHENNAI: localStorage.getItem("CHENNAI") ? localStorage.getItem("CHENNAI") : "",
-            MUMBAI: localStorage.getItem("MUMBAI") ? localStorage.getItem("MUMBAI") : ""
+            BENGALURU: localStorage.getItem("BENGALURU") ? localStorage.getItem("BENGALURU").split(",") : [],
+            DELHI: localStorage.getItem("DELHI") ? localStorage.getItem("DELHI").split(",") : [],
+            PUNE: localStorage.getItem("PUNE") ? localStorage.getItem("PUNE").split(",") : [],
+            CHENNAI: localStorage.getItem("CHENNAI") ? localStorage.getItem("CHENNAI").split(",") : [],
+            MUMBAI: localStorage.getItem("MUMBAI") ? localStorage.getItem("MUMBAI").split(",") : []
         }
+    }
+
+    removeA(arrR) {
+        var what, a = arguments, L = a.length, ax;
+        while (L > 1 && arrR.length) {
+            what = a[--L];
+            while ((ax = arrR.indexOf(what)) !== -1) {
+                arrR.splice(ax, 1);
+            }
+        }
+        return arrR;
     }
 
     onCLickOfFavorite = (ifsc) => {
         let arr = { ...this.state.arr }
-        arr[this.props.city] += ifsc;
+        if (arr[this.props.city].indexOf(ifsc) !== -1) {
+            this.removeA(arr[this.props.city], ifsc)
+        } else {
+            arr[this.props.city].push(ifsc);
+        }
         localStorage.setItem(this.props.city, arr[this.props.city]);
         this.setState({ arr })
     }
+
     render() {
         return (
             <div className="ui container">
@@ -25,44 +42,28 @@ class BankListView extends Component {
                     title="Bank List"
                     columns={[
                         {
-                            title: 'BANK NAME', field: 'bank_name', headerStyle: {
-                                backgroundColor: '#039be5',
-                            },
+                            title: 'BANK NAME', field: 'bank_name'
                         },
                         {
-                            title: 'IFSC', field: 'ifsc', headerStyle: {
-                                backgroundColor: '#039be5',
-                            }
+                            title: 'IFSC', field: 'ifsc'
                         },
                         {
-                            title: 'BANK ID', field: 'bank_id', type: 'numeric', headerStyle: {
-                                backgroundColor: '#039be5',
-                            }
+                            title: 'BANK ID', field: 'bank_id', type: 'numeric'
                         },
                         {
-                            title: 'BRANCH', field: 'branch', headerStyle: {
-                                backgroundColor: '#039be5',
-                            }
+                            title: 'BRANCH', field: 'branch'
                         },
                         {
-                            title: 'ADDRESS', field: 'address', headerStyle: {
-                                backgroundColor: '#039be5',
-                            }, hidden: true
+                            title: 'ADDRESS', field: 'address', hidden: true
                         },
                         {
-                            title: 'CITY', field: 'city', headerStyle: {
-                                backgroundColor: '#039be5',
-                            }, hidden: true
+                            title: 'CITY', field: 'city', hidden: true
                         },
                         {
-                            title: 'DISTRICT', field: 'district', headerStyle: {
-                                backgroundColor: '#039be5',
-                            }, hidden: true
+                            title: 'DISTRICT', field: 'district', hidden: true
                         },
                         {
-                            title: 'STATE', field: 'state', headerStyle: {
-                                backgroundColor: '#039be5',
-                            }, hidden: true
+                            title: 'STATE', field: 'state', hidden: true
                         }
                     ]}
                     data={this.props.data}
@@ -73,14 +74,11 @@ class BankListView extends Component {
                     }}
                     actions={[
                         rowData => ({
-                            icon: 'favorite',
+                            icon: this.state.arr[this.props.city].indexOf(rowData.ifsc) !== -1 ? 'favorite' : 'favorite_border',
                             tooltip: 'favorite Bank',
                             onClick: (event, rowData) => {
-
                                 this.onCLickOfFavorite(rowData.ifsc);
-
-                            },
-                            disabled: this.state.arr[this.props.city].indexOf(rowData.ifsc) !== -1
+                            }
                         })]}
                 />
             </div>
