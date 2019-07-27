@@ -8,17 +8,17 @@ User interface that allows a user to search the bank details of the 5 cities (i.
 
 There is dropdown at the top to select the city which they wants to search the details of the banks. <b>By default this application will be showing the table which has details of the banks available in Bengaluru</b>. 
 
-Initially when the application gets loaded only Bank Name, IFSC, Bank ID, Branch Name columns will be visible on the screen. If the user wants to see other details such as address, state etc. Then there is a button next to search option which lets the user to add or remove the column details from the table.
+Initially when the application gets loaded only Bank Name, IFSC, Bank ID, Branch Name columns will be visible on the screen. If the user wants to see other details such as address, state etc. <b>Then there is a button next to search option which lets the user to add or remove the column details from the table.</b>
 
-User can search for a specific details across the columns , also sort using columns. 
+<b>User can search for a specific details across the columns , also sort using columns.</b> 
 
-This application lets the user to export the details of the current page in CSV format.
+This application lets the user to <b> export the details of the current page in CSV format.</b>
 
-User can also be able to select the number of items to display in the current page, default it will be set to 5. 
+User can also be able to select the number of items to display in the current page, <b> default it will be set to 5</b>. 
 
-API responses are cached using axios-cache-adapter.
+<b>API responses are cached</b> using axios-cache-adapter.
 
-Application lets the user to add or remove the bank details as favorite from the list.
+<b>Application lets the user to add or remove the bank details as favorite from the list.</b> Even after the page is reloaded or refreshed user will be able to see the favorites in the list.
 
 ## Getting Started
 
