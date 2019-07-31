@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import BankSearch from './BankSearch';
 import BankListView from './BankListView';
-import axios from 'axios';
 import { setup } from 'axios-cache-adapter';
 
 import "../css/App.css";
@@ -10,15 +9,11 @@ class App extends Component {
 
     state = { data: [], city : 'BENGALURU' }
 
-    componentDidMount() {
-        let url = 'https://vast-shore-74260.herokuapp.com/banks?city=BENGALURU'
-        axios.get(url)
-            .then(response => {
-
-                this.setState({
-                    data: response.data,
-                });
-            })
+    async componentDidMount () {
+        const response = await this.api.get('/banks?city=' + this.state.city);
+        this.setState({
+            data: response.data,
+        });
     }
 
     api = setup({
